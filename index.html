@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ 
+    <div id="login-container" class="page active">
+        <div class="quiz-header">
+            <h1>Delta_Quiz</h1>
+        </div>
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username"><b>Username</b>:</label>
+            <input type="text" id="username" required>
+            <label for="password"><b>Password</b>:</label>
+            <input type="password" id="password" required>
+            <button type="submit" class="it"><b>Login</b></button>
+        </form>
+    </div>
+
+    <div id="instruction-container" class="page">
+        <div class="quiz-header">
+            <h1>Delta_Quiz</h1>
+        </div>
+        <h2>Quiz Instructions</h2>
+        <p>Please read the following instructions carefully before starting the quiz:</p>
+        <ul>
+            <li>Each question has only one correct answer.</li>
+            <li>You can navigate between questions using the "Next" and "Previous" buttons.</li>
+            <li>You can skip a question if you are unsure of the answer.</li>
+            <li>Your score will be displayed at the end of the quiz.</li>
+        </ul>
+        <button onclick="startQuiz()"  class="be">Start Quiz</button>
+    </div>
+ 
+
+    <div id="quiz-container" class="quiz-container page">
+        <div class="quiz-header">
+            <h1>Delta_Quiz</h1>
+        </div>
+        <div id="question-container">
+            <!-- Questions will be injected here by JavaScript -->
+        </div>
+        <div class="navigation-buttons">
+            <button id="prev-button" onclick="prevQuestion()">Previous</button>
+            <button id="skip" onclick="skipQuestion()">Skip</button>
+            <button id="next-button" onclick="nextQuestion()">Next</button>
+            <button id="submit-button" onclick="submitQuiz()">Submit</button>
+        </div>
+
+        <div id="bubbles-container"></div>
+    </div>
+
+    <div id="score-container" style="display: none;">
+        <h2>Your Score: <span id="score"></span></h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
